@@ -1,0 +1,347 @@
+package org.apache.jsp;
+
+import javax.servlet.*;
+import javax.servlet.http.*;
+import javax.servlet.jsp.*;
+import app.classes.User;
+import app.classes.Category;
+import app.classes.Product;
+import java.util.List;
+import app.classes.Category;
+import app.classes.Product;
+import app.classes.User;
+import java.util.List;
+import java.sql.SQLException;
+
+public final class checkout_jsp extends org.apache.jasper.runtime.HttpJspBase
+    implements org.apache.jasper.runtime.JspSourceDependent {
+
+  private static final JspFactory _jspxFactory = JspFactory.getDefaultFactory();
+
+  private static java.util.List<String> _jspx_dependants;
+
+  static {
+    _jspx_dependants = new java.util.ArrayList<String>(2);
+    _jspx_dependants.add("/components/nav_bar.jsp");
+    _jspx_dependants.add("/components/cart_model.jsp");
+  }
+
+  private org.glassfish.jsp.api.ResourceInjector _jspx_resourceInjector;
+
+  public java.util.List<String> getDependants() {
+    return _jspx_dependants;
+  }
+
+  public void _jspService(HttpServletRequest request, HttpServletResponse response)
+        throws java.io.IOException, ServletException {
+
+    PageContext pageContext = null;
+    HttpSession session = null;
+    ServletContext application = null;
+    ServletConfig config = null;
+    JspWriter out = null;
+    Object page = this;
+    JspWriter _jspx_out = null;
+    PageContext _jspx_page_context = null;
+
+    try {
+      response.setContentType("text/html;charset=UTF-8");
+      pageContext = _jspxFactory.getPageContext(this, request, response,
+      			null, true, 8192, true);
+      _jspx_page_context = pageContext;
+      application = pageContext.getServletContext();
+      config = pageContext.getServletConfig();
+      session = pageContext.getSession();
+      out = pageContext.getOut();
+      _jspx_out = out;
+      _jspx_resourceInjector = (org.glassfish.jsp.api.ResourceInjector) application.getAttribute("com.sun.appserv.jsp.resource.injector");
+
+      out.write("\n");
+      out.write("\n");
+      out.write("\n");
+      out.write("\n");
+      out.write("\n");
+
+    User user = (User) session.getAttribute("user");
+    if (user == null) {
+        session.setAttribute("errorMessage", "Please login to proceed with checkout.");
+        response.sendRedirect("login.jsp");
+        return;
+    }
+
+      out.write("\n");
+      out.write("\n");
+      out.write("\n");
+      out.write("<!DOCTYPE html>\n");
+      out.write("<html>\n");
+      out.write("    <head>\n");
+      out.write("        <meta http-equiv=\"Content-Type\" content=\"text/html; charset=UTF-8\">\n");
+      out.write("        <link href=\"https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css\" rel=\"stylesheet\"\n");
+      out.write("              integrity=\"sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH\" crossorigin=\"anonymous\">\n");
+      out.write("        <title>Checkout</title>\n");
+      out.write("        <style>\n");
+      out.write("            .card {\n");
+      out.write("                background-color: lightgray;\n");
+      out.write("                border-radius: 15px;\n");
+      out.write("                box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);\n");
+      out.write("            }\n");
+      out.write("\n");
+      out.write("            .form-control {\n");
+      out.write("                background-color: lightgray;\n");
+      out.write("                border-radius: 15px;\n");
+      out.write("                border: none;\n");
+      out.write("                padding: 12px 20px;\n");
+      out.write("            }\n");
+      out.write("\n");
+      out.write("            .form-control:focus {\n");
+      out.write("                outline: none;\n");
+      out.write("                box-shadow: 0 0 5px rgba(81, 203, 238, 1);\n");
+      out.write("            }\n");
+      out.write("\n");
+      out.write("            .btn-outline-success, .btn-outline-primary {\n");
+      out.write("                border-radius: 15px;\n");
+      out.write("                padding: 10px 20px;\n");
+      out.write("                font-size: 16px;\n");
+      out.write("                transition: all 0.3s ease-in-out;\n");
+      out.write("            }\n");
+      out.write("\n");
+      out.write("            .btn-outline-success:hover, .btn-outline-primary:hover {\n");
+      out.write("                transform: scale(1.05);\n");
+      out.write("            }\n");
+      out.write("        </style>\n");
+      out.write("    </head>\n");
+      out.write("    <body style=\"background-color: \">\n");
+      out.write("\n");
+      out.write("        ");
+      out.write("\r\n");
+      out.write("\r\n");
+      out.write("\r\n");
+      out.write("\r\n");
+      out.write("\r\n");
+      out.write("<!DOCTYPE html>\r\n");
+      out.write("<html lang=\"en\">\r\n");
+      out.write("    <head>\r\n");
+      out.write("        <meta charset=\"UTF-8\">\r\n");
+      out.write("        <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\r\n");
+      out.write("        <title>StyleHub</title>\r\n");
+      out.write("        <link rel=\"stylesheet\" href=\"https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.1.3/css/bootstrap.min.css\">\r\n");
+      out.write("        <link rel=\"preconnect\" href=\"https://fonts.googleapis.com\">\r\n");
+      out.write("        <link rel=\"preconnect\" href=\"https://fonts.gstatic.com\" crossorigin>\r\n");
+      out.write("        <link href=\"https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap\" rel=\"stylesheet\">\r\n");
+      out.write("        \r\n");
+      out.write("        <script src=\"script.js\"></script>\r\n");
+      out.write("        <style>\r\n");
+      out.write("            .navbar {\r\n");
+      out.write("                background-color: #808080;\r\n");
+      out.write("                border-radius: 15px;\r\n");
+      out.write("                width: 97%;\r\n");
+      out.write("                margin: 0 auto 2rem;\r\n");
+      out.write("                padding: 1rem;\r\n");
+      out.write("                font-family: 'Poppins', sans-serif;\r\n");
+      out.write("            }\r\n");
+      out.write("            .navbar-brand {\r\n");
+      out.write("                font-size: 1.75rem;\r\n");
+      out.write("                font-weight: 600;\r\n");
+      out.write("            }\r\n");
+      out.write("            .nav-link {\r\n");
+      out.write("                font-size: 1.25rem;\r\n");
+      out.write("                font-weight: 500;\r\n");
+      out.write("            }\r\n");
+      out.write("            .navbar-toggler {\r\n");
+      out.write("                border-color: transparent;\r\n");
+      out.write("            }\r\n");
+      out.write("            .navbar-toggler-icon {\r\n");
+      out.write("                filter: invert(1);\r\n");
+      out.write("            }\r\n");
+      out.write("            .nav-item img {\r\n");
+      out.write("                width: 28px;\r\n");
+      out.write("            }\r\n");
+      out.write("        </style>\r\n");
+      out.write("    </head>\r\n");
+      out.write("    <body>\r\n");
+      out.write("        <div class=\"container-fluid d-flex justify-content-center\">\r\n");
+      out.write("            <nav class=\"navbar navbar-expand-lg navbar-dark\">\r\n");
+      out.write("                <div class=\"container-fluid\">\r\n");
+      out.write("                    <a class=\"navbar-brand\" href=\"index.jsp\">StyleHub</a>\r\n");
+      out.write("                    <button class=\"navbar-toggler\" type=\"button\" data-bs-toggle=\"collapse\" data-bs-target=\"#navbarNav\" aria-controls=\"navbarNav\" aria-expanded=\"false\" aria-label=\"Toggle navigation\">\r\n");
+      out.write("                        <span class=\"navbar-toggler-icon\"></span>\r\n");
+      out.write("                    </button>\r\n");
+      out.write("                    <div class=\"collapse navbar-collapse\" id=\"navbarNav\">\r\n");
+      out.write("                        <ul class=\"navbar-nav ms-auto mb-2 mb-lg-0\">\r\n");
+      out.write("                            <li class=\"nav-item active\">\r\n");
+      out.write("                                <a class=\"nav-link\" href=\"index.jsp\">Home</a>\r\n");
+      out.write("                            </li>\r\n");
+      out.write("                            <li class=\"nav-item\">\r\n");
+      out.write("                                <a class=\"nav-link\" href=\"#\">About</a>\r\n");
+      out.write("                            </li>\r\n");
+      out.write("                            <li class=\"nav-item\">\r\n");
+      out.write("                                <a class=\"nav-link\" href=\"#\" data-bs-toggle=\"modal\" data-bs-target=\"#cart\">\r\n");
+      out.write("                                    <img src=\"images/cart-plus-solid.svg\" alt=\"Cart\" />\r\n");
+      out.write("                                    <span class=\"ms-2 cart-items\">( 0 )</span>\r\n");
+      out.write("                                </a>\r\n");
+      out.write("                            </li>\r\n");
+      out.write("                            <li class=\"nav-item\">\r\n");
+      out.write("                                <a class=\"nav-link\" href=\"login.jsp\">Login</a>\r\n");
+      out.write("                            </li>\r\n");
+      out.write("                            <li class=\"nav-item\">\r\n");
+      out.write("                                <a class=\"nav-link\" href=\"register.jsp\">Register</a>\r\n");
+      out.write("                            </li>\r\n");
+      out.write("                            <li class=\"nav-item\">\r\n");
+      out.write("                                <a class=\"nav-link\" href=\"javascript:void(0);\" onclick=\"confirmLogout()\">Log out</a>                        </li>\r\n");
+      out.write("                        </ul>\r\n");
+      out.write("                    </div>\r\n");
+      out.write("                </div>\r\n");
+      out.write("            </nav>\r\n");
+      out.write("        </div>\r\n");
+      out.write("    </body>\r\n");
+      out.write("</html>\r\n");
+      out.write("\n");
+      out.write("\n");
+      out.write("        <div class=\"container\">\n");
+      out.write("            <div class=\"row mt-5\">\n");
+      out.write("\n");
+      out.write("                <div class=\"col-md-6\">\n");
+      out.write("                    <!-- Card detail -->\n");
+      out.write("                    <div class=\"card\">\n");
+      out.write("                        <div class=\"card-body\">\n");
+      out.write("                            <h3 class=\"text-center mb-5\">Your selected Items</h3>\n");
+      out.write("                            <div class=\"cart-body\">\n");
+      out.write("                                <!-- Cart items will be displayed here -->\n");
+      out.write("                            </div>\n");
+      out.write("                        </div>\n");
+      out.write("                    </div>\n");
+      out.write("                </div>\n");
+      out.write("\n");
+      out.write("                <div class=\"col-md-6\">\n");
+      out.write("                    <!-- Form details -->\n");
+      out.write("                    <div class=\"card\">\n");
+      out.write("                        <div class=\"card-body\">\n");
+      out.write("                            <h3 class=\"text-center mb-5\">Your Details for the Order</h3>\n");
+      out.write("                            <form action=\"PlaceOrderServlet\" method=\"post\">\n");
+      out.write("                                <div class=\"mb-3\">\n");
+      out.write("                                    <label for=\"exampleInputEmail1\" class=\"form-label\">Email address</label>\n");
+      out.write("                                    <input value=\"");
+      out.print( user.getUseremail());
+      out.write("\" name=\"email\" type=\"email\" class=\"form-control\" id=\"mailAddress\" aria-describedby=\"emailHelp\" placeholder=\"Enter email\">\n");
+      out.write("                                    <div id=\"emailHelp\" class=\"form-text\">We'll never share your email with anyone else.</div>\n");
+      out.write("                                </div>\n");
+      out.write("\n");
+      out.write("                                <div class=\"mb-3\">\n");
+      out.write("                                    <label for=\"exampleInputName\" class=\"form-label\">Your name</label>\n");
+      out.write("                                    <input value=\"");
+      out.print( user.getUsername());
+      out.write("\" name=\"name\" type=\"text\" class=\"form-control\" id=\"name\" aria-describedby=\"nameHelp\" placeholder=\"Enter your name\">\n");
+      out.write("                                    <div id=\"nameHelp\" class=\"form-text\">We'll never share your information with anyone else.</div>\n");
+      out.write("                                </div>\n");
+      out.write("\n");
+      out.write("                                <div class=\"mb-3\">\n");
+      out.write("                                    <label for=\"exampleInputContact\" class=\"form-label\">Your Contact number</label>\n");
+      out.write("                                    <input value=\"");
+      out.print( user.getUserphone());
+      out.write("\" name=\"contactNumber\" type=\"text\" class=\"form-control\" id=\"contactNumber\" aria-describedby=\"contactHelp\" placeholder=\"Enter Contact number\">\n");
+      out.write("                                    <div id=\"contactHelp\" class=\"form-text\">We'll never share your contact number with anyone else.</div>\n");
+      out.write("                                </div>\n");
+      out.write("\n");
+      out.write("                                <div class=\"mb-3\">\n");
+      out.write("                                    <label for=\"exampleFormControlTextarea1\" class=\"form-label\">Your address for the order</label>\n");
+      out.write("                                    <textarea class=\"form-control\" name=\"address\" id=\"orderAddress\" rows=\"3\" placeholder=\"Enter Your Address\">");
+      out.print( user.getUseraddress());
+      out.write("</textarea>\n");
+      out.write("                                </div>\n");
+      out.write("\n");
+      out.write("                                <div class=\"mb-3\">\n");
+      out.write("                                    <label for=\"city\" class=\"form-label\">City</label>\n");
+      out.write("                                    <input type=\"text\" name=\"city\" class=\"form-control\" id=\"city\" placeholder=\"Enter your city\">\n");
+      out.write("                                </div>\n");
+      out.write("\n");
+      out.write("                                <div class=\"mb-3\">\n");
+      out.write("                                    <label for=\"district\" class=\"form-label\">District</label>\n");
+      out.write("                                    <input type=\"text\" name=\"district\" class=\"form-control\" id=\"district\" placeholder=\"Enter your district\">\n");
+      out.write("                                </div>\n");
+      out.write("\n");
+      out.write("                                <div class=\"mb-3\">\n");
+      out.write("                                    <label for=\"shippingCode\" class=\"form-label\">Shipping Code</label>\n");
+      out.write("                                    <input type=\"text\" name=\"shippingCode\" class=\"form-control\" id=\"shippingCode\" placeholder=\"Enter shipping code\">\n");
+      out.write("                                </div>\n");
+      out.write("\n");
+      out.write("                                <div class=\"mb-3\">\n");
+      out.write("                                    <label class=\"form-label\">Shipping Method</label>\n");
+      out.write("                                    <div class=\"form-check\">\n");
+      out.write("                                        <input class=\"form-check-input\" type=\"radio\" name=\"shippingMethod\" id=\"speedPost\" value=\"speedPost\">\n");
+      out.write("                                        <label class=\"form-check-label\" for=\"speedPost\">\n");
+      out.write("                                            Speed Post\n");
+      out.write("                                        </label>\n");
+      out.write("                                    </div>\n");
+      out.write("                                    <div class=\"form-check\">\n");
+      out.write("                                        <input class=\"form-check-input\" type=\"radio\" name=\"shippingMethod\" id=\"normalPost\" value=\"normalPost\">\n");
+      out.write("                                        <label class=\"form-check-label\" for=\"normalPost\">\n");
+      out.write("                                            Normal Post\n");
+      out.write("                                        </label>\n");
+      out.write("                                    </div>\n");
+      out.write("                                </div>\n");
+      out.write("\n");
+      out.write("                                <div class=\"mb-3\">\n");
+      out.write("                                    <label for=\"discountedPrice\" class=\"form-label\">Discounted Price</label>\n");
+      out.write("                                    <input type=\"text\" class=\"form-control\" name=\"discountedPrice\" id=\"discountedPrice\" placeholder=\"Discounted Price\" readonly>\n");
+      out.write("                                </div>\n");
+      out.write("\n");
+      out.write("                                <div class=\"d-grid gap-2 d-md-flex justify-content-md-end\">\n");
+      out.write("                                    <button class=\"btn btn-outline-success\" type=\"submit\">Order Now</button>\n");
+      out.write("                                    <button class=\"btn btn-outline-primary\" type=\"button\" onclick=\"window.location.href = 'index.jsp'\">Select more items for order</button>\n");
+      out.write("                                    <button class=\"btn btn-outline-clear\" type=\"reset\">Clear</button>\n");
+      out.write("                                </div>\n");
+      out.write("                            </form>\n");
+      out.write("                        </div>\n");
+      out.write("                    </div>\n");
+      out.write("                </div>\n");
+      out.write("\n");
+      out.write("            </div>\n");
+      out.write("        </div>\n");
+      out.write("\n");
+      out.write("        ");
+      out.write("<!-- Cart Model -->\n");
+      out.write("<div class=\"modal fade\" id=\"cart\" tabindex=\"-1\" aria-labelledby=\"exampleModalLabel\" aria-hidden=\"true\">\n");
+      out.write("  <div class=\"modal-dialog modal-lg\" role=\"document\">\n");
+      out.write("    <div class=\"modal-content\">\n");
+      out.write("        <div class=\"modal-header\">\n");
+      out.write("        <h1 class=\"modal-title fs-4\" id=\"exampleModalLabel\">Selected Items</h1>\n");
+      out.write("        <button type=\"button\" class=\"btn-close\" data-bs-dismiss=\"modal\" aria-label=\"Close\"></button>\n");
+      out.write("      </div>\n");
+      out.write("      <div class=\"modal-body cart-body\">\n");
+      out.write("        <!-- Cart items will be dynamically updated here -->\n");
+      out.write("      </div>\n");
+      out.write("      <div class=\"modal-footer\">\n");
+      out.write("        <button type=\"button\" class=\"btn btn-secondary\" data-bs-dismiss=\"modal\">Close</button>\n");
+      out.write("        \n");
+      out.write("        <button type=\"button\" class=\"btn btn-primary checkout-btn\" onclick=\"goToCheckout()\">Checkout</button>\n");
+      out.write("      </div>\n");
+      out.write("    </div>\n");
+      out.write("  </div>\n");
+      out.write("</div>");
+      out.write("\n");
+      out.write("        <script src=\"https://code.jquery.com/jquery-3.7.1.min.js\" integrity=\"sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=\" crossorigin=\"anonymous\"></script>\n");
+      out.write("        <script src=\"https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js\" integrity=\"sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz\" crossorigin=\"anonymous\"></script>\n");
+      out.write("\n");
+      out.write("        <script src=\"./js/script.js\"></script>\n");
+      out.write("        <script>\n");
+      out.write("                                        $(document).ready(function () {\n");
+      out.write("                                            // Fetch the discounted price and update the field\n");
+      out.write("                                            var discountedPrice = updateCart();\n");
+      out.write("                                            $('#discountedPrice').val(discountedPrice.toFixed(2));\n");
+      out.write("                                        });\n");
+      out.write("        </script>\n");
+      out.write("    </body>\n");
+      out.write("</html>");
+    } catch (Throwable t) {
+      if (!(t instanceof SkipPageException)){
+        out = _jspx_out;
+        if (out != null && out.getBufferSize() != 0)
+          out.clearBuffer();
+        if (_jspx_page_context != null) _jspx_page_context.handlePageException(t);
+        else throw new ServletException(t);
+      }
+    } finally {
+      _jspxFactory.releasePageContext(_jspx_page_context);
+    }
+  }
+}
