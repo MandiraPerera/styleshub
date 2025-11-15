@@ -94,7 +94,3 @@ The app expects a MySQL-compatible database named `rad_new` (see `rad_new.sql`).
 - Externalize DB config to a properties file or environment variables
 - Create a tiny script to import `rad_new.sql` automatically
 
----
-
-If you'd like, I can also add a short CONTRIBUTING.md, a license file, or wire up a simple PowerShell script to set up the DB automatically—tell me which you'd prefer next.
-
